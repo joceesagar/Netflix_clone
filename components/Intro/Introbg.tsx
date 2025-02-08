@@ -31,8 +31,8 @@ function Introbg({ onEmailChange }: FormComponentProps) {
 
 
   return (
-    <div className='w-full h-screen relative'>
-      <div className='w-full h-screen bg-black' style={{ backgroundImage: "url('/bg.png')", backgroundSize: 'cover' }}>
+    <div className='w-full h-[70%] relative'>
+      <div className='w-full h-[100%] bg-black' style={{ backgroundImage: "url('/bg.png')", backgroundSize: 'cover' }}>
 
       </div>
       {/* Black Overlay */}
@@ -68,6 +68,9 @@ function Introbg({ onEmailChange }: FormComponentProps) {
             </div>
           }
         </div>
+      </div>
+      <div className='w-full h-20 bg-transparent absolute bottom-0' style={{ backgroundImage: "url('/Frame 5.svg')", backgroundSize: 'cover' }}>
+
       </div>
 
     </div>

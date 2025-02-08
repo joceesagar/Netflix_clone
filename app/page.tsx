@@ -1,5 +1,6 @@
 "use client"
 import Introbg from "@/components/Intro/Introbg";
+import Introtrending from "@/components/Intro/Introtrending";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import { useState } from "react";
@@ -17,6 +18,9 @@ export default function Home() {
 
       {/* Intro Background */}
       <Introbg onEmailChange={handleEmail} />
+
+      {/* Intro Trending */}
+      <Introtrending />
     </div>
   );
 }

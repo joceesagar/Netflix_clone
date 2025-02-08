@@ -73,3 +73,12 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.fading-div {
+  position: relative;
+  background: linear-gradient(to bottom, black, blue, black); /* Black to Blue to Black */
+  mask-image: radial-gradient(circle closest-side, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 255, 1) 50%, rgba(0, 0, 0, 1) 70%);
+  -webkit-mask-image: radial-gradient(circle closest-side, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 255, 1) 50%, rgba(0, 0, 0, 1) 70%);
+}
+
+
