@@ -31,7 +31,7 @@ function Introbg({ onEmailChange }: FormComponentProps) {
 
 
   return (
-    <div className='w-full h-[70%] relative'>
+    <div className='w-full h-[80%] relative'>
       <div className='w-full h-[100%] bg-black' style={{ backgroundImage: "url('/bg.png')", backgroundSize: 'cover' }}>
 
       </div>
