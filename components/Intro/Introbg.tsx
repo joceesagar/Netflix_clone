@@ -3,17 +3,19 @@ import React, { useState } from 'react'
 import { Input } from '../ui/input'
 import { Button } from '../ui/button'
 import { ChevronRight, CircleX } from 'lucide-react'
+import useUserStore from '@/lib/store'
 
-type FormComponentProps = {
-  onEmailChange: (email: string) => void;  // Prop to receive the function from parent
-};
 
-function Introbg({ onEmailChange }: FormComponentProps) {
+
+function Introbg() {
   const [email, setEmail] = useState<string>("")
   const [isfocus, setIsFocus] = useState<boolean>(false)
   const [error, setError] = useState<string>("")
   const emailRegex = /^(?!\.)(?!.*\.\.)([a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*)@([a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,63}$/;
 
+  const addUser = useUserStore((state) => state.addUser)
+  const users = useUserStore((state) => state.users)
+  console.log(users)
 
   const handleSubmit = () => {
     if (email === "") {
@@ -25,7 +27,7 @@ function Introbg({ onEmailChange }: FormComponentProps) {
       return
     }
     setError("")
-    onEmailChange(email)
+    addUser({ Email: email })
 
   }
 
@@ -48,7 +50,7 @@ function Introbg({ onEmailChange }: FormComponentProps) {
         <div className='w-[30%] flex flex-col justify-center items-center gap-4'>
           <p className='text-white'>Ready to watch? Enter your email to create or restart your membership.</p>
           <div className='flex gap-2 w-full'>
-            <label htmlFor='email' className={`text-gray-400 text-md absolute mt-4 ml-4 font-bold ${isfocus || email ? "text-[12px] mt-1 ml-3" : ""} animate-in transition-all`}>Email address</label>
+            <label htmlFor='email' className={`text-gray-400 text-md absolute mt-4 ml-4 font-bold ${isfocus || email ? "text-[12px] mt-0 ml-3" : ""} animate-in transition-all`}>Email address</label>
             <Input
               id='email'
               value={email}

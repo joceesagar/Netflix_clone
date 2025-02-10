@@ -17,7 +17,7 @@ export default function Home() {
       <Navbar />
 
       {/* Intro Background */}
-      <Introbg onEmailChange={handleEmail} />
+      <Introbg />
 
       {/* Intro Trending */}
       <Introtrending />
