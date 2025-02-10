@@ -1,5 +1,6 @@
 "use client"
 import Introbg from "@/components/Intro/Introbg";
+import IntroFAQs from "@/components/Intro/IntroFAQs";
 import Introtrending from "@/components/Intro/Introtrending";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
@@ -21,6 +22,9 @@ export default function Home() {
 
       {/* Intro Trending */}
       <Introtrending />
+
+      {/* Intro FAQs */}
+      <IntroFAQs />
     </div>
   );
 }

@@ -63,7 +63,7 @@ const textTiles = [
 
 function Introtrending() {
     return (
-        <div className="relative w-full bg-black px-40 flex flex-col gap-14">
+        <div className="relative w-full bg-black px-40 flex flex-col gap-14 pb-16">
             {/* Trending Text */}
             <div className='flex flex-col gap-4'>
                 <p className="text-white text-2xl">Trending Now</p>
@@ -83,8 +83,8 @@ function Introtrending() {
                     <CarouselNext />
                 </Carousel>
             </div>
+            {/* Reasons to join */}
             <div className='flex flex-col gap-4'>
-                {/* Reasons to join */}
                 <p className="text-white text-2xl">More Reasons to Join</p>
                 <div className="grid grid-cols-4 gap-2">
                     {textTiles.map((data, index) =>

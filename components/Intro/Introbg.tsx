@@ -50,7 +50,7 @@ function Introbg() {
         <div className='w-[30%] flex flex-col justify-center items-center gap-4'>
           <p className='text-white'>Ready to watch? Enter your email to create or restart your membership.</p>
           <div className='flex gap-2 w-full'>
-            <label htmlFor='email' className={`text-gray-400 text-md absolute mt-4 ml-4 font-bold ${isfocus || email ? "text-[12px] mt-0 ml-3" : ""} animate-in transition-all`}>Email address</label>
+            <label htmlFor='email' className={`text-gray-400 text-md absolute mt-4 ml-4 font-bold ${isfocus || email ? "text-[12px] mt-[-1] py-1 ml-3" : ""} animate-in transition-all`}>Email address</label>
             <Input
               id='email'
               value={email}
@@ -61,7 +61,7 @@ function Introbg() {
               className={`${error ? "border-red-600" : "border-gray-400"} text-white`}
             />
 
-            <Button className='text-2xl font-bold' size={"lg"} onClick={handleSubmit}>Get Started <ChevronRight size={24} /></Button>
+            <Button className='text-2xl font-bold' size={"lg"} onClick={handleSubmit}>Get Started <ChevronRight size={50} /></Button>
           </div>
           {error &&
             <div className='flex gap-2 text-red-600'>
