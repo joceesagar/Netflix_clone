@@ -2,8 +2,9 @@
 import React, { useState } from 'react'
 import { Input } from '../ui/input'
 import { Button } from '../ui/button'
-import { ChevronRight, CircleX } from 'lucide-react'
+import { ChevronRight, CircleX, Loader2Icon } from 'lucide-react'
 import useUserStore from '@/lib/store'
+import { useRouter } from 'next/navigation'
 
 
 
@@ -12,22 +13,27 @@ function Introbg() {
   const [isfocus, setIsFocus] = useState<boolean>(false)
   const [error, setError] = useState<string>("")
   const emailRegex = /^(?!\.)(?!.*\.\.)([a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*)@([a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,63}$/;
-
   const addUser = useUserStore((state) => state.addUser)
   const users = useUserStore((state) => state.users)
-  console.log(users)
+  const router = useRouter()
+  const [loading, setLoading] = useState(false)
 
   const handleSubmit = () => {
+    setLoading(true)
     if (email === "") {
       setError("Empty")
+      setLoading(false)
       return
     }
     else if (!emailRegex.test(email)) {
       setError("Invalid Email")
+      setLoading(false)
       return
     }
     setError("")
+    setLoading(false)
     addUser({ Email: email })
+    router.push("/signup/register")
 
   }
 
@@ -61,7 +67,15 @@ function Introbg() {
               className={`${error ? "border-red-600" : "border-gray-400"} text-white`}
             />
 
-            <Button className='text-2xl font-bold' size={"lg"} onClick={handleSubmit}>Get Started <ChevronRight size={50} /></Button>
+            <Button className="text-2xl font-bold" size="lg" onClick={handleSubmit}>
+              {loading ? (
+                <Loader2Icon className="animate-spin" />
+              ) : (
+                <>
+                  Get Started <ChevronRight size={50} />
+                </>
+              )}
+            </Button>
           </div>
           {error &&
             <div className='flex gap-2 text-red-600'>
