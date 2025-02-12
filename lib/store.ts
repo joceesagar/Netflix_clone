@@ -31,6 +31,8 @@ const useUserStore = create<UserStore>((set) => ({
         set((state) => ({
             users: state.users.filter((user) => user.Email !== email),
         })),
+
+    getEmail:
 }));
 
 export default useUserStore;

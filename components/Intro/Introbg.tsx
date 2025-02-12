@@ -14,7 +14,6 @@ function Introbg() {
   const [error, setError] = useState<string>("")
   const emailRegex = /^(?!\.)(?!.*\.\.)([a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*)@([a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,63}$/;
   const addUser = useUserStore((state) => state.addUser)
-  const users = useUserStore((state) => state.users)
   const router = useRouter()
   const [loading, setLoading] = useState(false)
 
